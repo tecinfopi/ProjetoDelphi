@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A8809832-ECFA-4C02-959D-725A5354F143}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\projeto Simples\Cliente.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Downloads\AdvSoftware\AdvSoftware\advsoftware.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Cliente">
+        <MSBuild Projects="..\projeto Simples\Cliente.dproj"/>
+    </Target>
+    <Target Name="Cliente:Clean">
+        <MSBuild Projects="..\projeto Simples\Cliente.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Cliente:Make">
+        <MSBuild Projects="..\projeto Simples\Cliente.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="advsoftware">
+        <MSBuild Projects="..\..\..\Downloads\AdvSoftware\AdvSoftware\advsoftware.dproj"/>
+    </Target>
+    <Target Name="advsoftware:Clean">
+        <MSBuild Projects="..\..\..\Downloads\AdvSoftware\AdvSoftware\advsoftware.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="advsoftware:Make">
+        <MSBuild Projects="..\..\..\Downloads\AdvSoftware\AdvSoftware\advsoftware.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Cliente;advsoftware"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Cliente:Clean;advsoftware:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Cliente:Make;advsoftware:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
