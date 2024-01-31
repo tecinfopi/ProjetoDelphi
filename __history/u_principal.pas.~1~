@@ -23,7 +23,6 @@ type
     PnlLogo: TPanel;
     Image1: TImage;
     BitBtn1: TBitBtn;
-    BitBtn2: TBitBtn;
   private
     { Private declarations }
   public

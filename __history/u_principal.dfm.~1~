@@ -36,20 +36,6 @@ object frm_principal: Tfrm_principal
       ParentFont = False
       TabOrder = 0
     end
-    object BitBtn2: TBitBtn
-      Left = 1
-      Top = 41
-      Width = 184
-      Height = 43
-      Caption = '&Clientes'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 1
-    end
   end
   object PnlTop: TPanel
     Left = 0
@@ -61,6 +47,7 @@ object frm_principal: Tfrm_principal
     Ctl3D = True
     ParentCtl3D = False
     TabOrder = 1
+    ExplicitWidth = 765
     object PnlLogo: TPanel
       Left = 1
       Top = 1
@@ -1364,5 +1351,6 @@ object frm_principal: Tfrm_principal
     Ctl3D = False
     ParentCtl3D = False
     TabOrder = 2
+    ExplicitWidth = 765
   end
 end
